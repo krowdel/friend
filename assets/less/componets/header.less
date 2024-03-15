@@ -1,0 +1,190 @@
+// main: ../style.less
+
+header {
+    //padding: 30px 0;
+    position: relative;
+    @media(max-width: 767px) {
+        padding: 0;
+    }
+    .stic {
+        transition: padding .3s;
+        padding: 30px 0;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background-image: linear-gradient(#1c1e21, #0000);
+    }
+    .stic.move-activ {
+        transition: padding .3s;
+        padding: 0 0 35px;
+        .log  svg{
+            transition: width .3s;
+            width: 60px;
+        }
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        justify-items: end;
+        align-items: center;
+        gap: 46px;
+        width: 100%;
+        @media(max-width: 767px) {
+            justify-content: space-between;
+            grid-template-columns: auto auto auto;
+            gap: 20px;
+        }
+        .log {
+            @media (max-width: 767px) {
+                svg{
+                    transition: width .3s;
+                    width: 60px;
+                }
+            }
+        }
+        .menu {
+            display: flex;
+            gap: 37px;
+            justify-content: center;
+            transition: color .3s;
+            @media(max-width: 767px) {
+                position: fixed;
+                z-index: 99;
+                top: 0;
+                left: 0;
+                transform: translateX(-105vw);
+                width: 100vw;
+                padding: 30px;
+                box-sizing: border-box;
+                background-color: #fff;
+                flex-direction: column;
+                gap: 20px;
+                transition: transform .6s;
+                &.open{
+                    transform: translateX(0vw);
+                }
+            }
+            .group-menu {
+                position: relative;
+                &:hover {
+                    .submenu {
+                        padding: 20px;
+                        max-height: 1000px;
+                    }
+                }
+                .title-menu {
+                    @media (max-width: 767px){
+                        padding-bottom: 20px;
+                    }
+                    &::after {
+                        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.745' height='5.315' viewBox='0 0 9.745 5.315'%3E%3Cpath id='XMLID_225_' d='M9.615,75.13a.443.443,0,0,0-.626,0L4.873,79.246.757,75.13a.443.443,0,0,0-.626.626L4.56,80.186a.443.443,0,0,0,.626,0l4.429-4.429A.443.443,0,0,0,9.615,75.13Z' transform='translate(0 -75)' fill='%23fff'/%3E%3C/svg%3E%0A");
+                        position: relative;
+                        padding-left: 5px;
+                        top: -3px;
+                    }
+                    &:hover {
+                        &::after {
+                            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.745' height='5.315' viewBox='0 0 9.745 5.315'%3E%3Cpath id='XMLID_225_' d='M9.615,75.13a.443.443,0,0,0-.626,0L4.873,79.246.757,75.13a.443.443,0,0,0-.626.626L4.56,80.186a.443.443,0,0,0,.626,0l4.429-4.429A.443.443,0,0,0,9.615,75.13Z' transform='translate(0 -75)' fill='%23ffca2e'/%3E%3C/svg%3E%0A");
+                        }
+                    }
+                    &.active {
+                        &::after {
+                            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.745' height='5.315' viewBox='0 0 9.745 5.315'%3E%3Cpath id='XMLID_225_' d='M9.615,75.13a.443.443,0,0,0-.626,0L4.873,79.246.757,75.13a.443.443,0,0,0-.626.626L4.56,80.186a.443.443,0,0,0,.626,0l4.429-4.429A.443.443,0,0,0,9.615,75.13Z' transform='translate(0 -75)' fill='%23ffca2e'/%3E%3C/svg%3E%0A");
+                        }
+                    }
+                }
+                .submenu {
+                    background-color: #fff;
+                    position: absolute;
+                    top: 30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: fit-content;
+                    margin: 0;
+                    padding: 0;
+                    transition: all .6s;
+                    box-sizing: border-box;
+                    display: grid;
+                    gap: 7px;
+                    overflow: hidden;
+                    max-height: 0;
+                    justify-items: center;
+                    z-index: 999;
+                    @media(max-width: 767px) {
+                        position: relative;
+                        max-height: 1000px;
+                        width: 100%;
+                        top: auto;
+                        gap: 12px;
+                        padding: 20px;
+                        border-bottom: 1px solid @colorpPrimary;
+                        border-top: 1px solid @colorpPrimary;
+                        transition: none;
+                        li {
+                            position: relative;
+                            left: 15px;
+                            padding: 0;
+                            &::marker {
+                                display: none;
+                            }
+                        }
+                    }
+                    li {
+                        a {
+                            white-space: nowrap;
+                            color: #000;
+                            transition: color .3s;
+                            &:hover, &.active {
+                                color: @colorpPrimary;
+                            }
+                        }
+                    }
+                }
+            }
+            a, .title-menu{
+                color: #fff;
+                font-weight: 700;
+                text-transform: uppercase;
+                cursor: pointer;
+                @media(max-width: 767px) {
+                    color: #000;
+                }
+                &.active {
+                    color: @colorpPrimary;
+                }
+                &:hover{
+                    color: @colorpPrimary;
+                }
+            }
+            .title-menu.noactiv {
+                cursor: default;
+            }
+        }
+        .open-menu {
+            svg {fill: #fff; }
+            cursor: pointer;
+            display: none;
+            @media(max-width: 767px){
+                display: block;
+                padding-right: 15px;
+            }
+        }
+        .close-menu {
+            svg {fill: #000; }
+            cursor: pointer;
+            display: none;
+            @media(max-width: 767px){
+                display: block;
+                position: absolute;
+                top: 30px;
+                right: 40px;
+            }
+        }
+        .social {
+            display: flex;
+            gap: 20px;
+        }
+    }
+}

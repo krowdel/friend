@@ -1,0 +1,128 @@
+//main: ../style.less
+:root {
+    --time-ani: 6s;
+    --type-ani: infinite; 
+}  
+.rozeta {
+    display: grid;
+    place-items: center;
+    
+    svg{
+        width: 40%;
+        fill: none;
+        stroke-width: .2px;
+        stroke: #aaa;
+        @media(max-width: 768px) {
+            width: 100%;
+        }
+    }
+    .roz1{
+        stroke-dasharray: 47;
+        stroke-dashoffset: 47;
+        animation: animRoz1 var(--time-ani) linear var(--type-ani) alternate;
+    }
+    .roz2{
+        stroke-dasharray: 35;
+        stroke-dashoffset: 35;
+        animation: animRoz2 var(--time-ani) linear var(--type-ani) alternate;
+    }
+    .roz3{
+        stroke-dasharray: 19;
+        stroke-dashoffset: 19;
+        animation: animRoz3 var(--time-ani) linear var(--type-ani) alternate;
+    }
+}
+
+@keyframes animRoz1 {
+    0% {stroke-dashoffset: 47;}
+    10% {stroke-dashoffset: 47;}
+    30% {stroke-dashoffset: 0;}
+    100% {stroke-dashoffset: 0;}
+}
+
+@keyframes animRoz2 {
+    0% {stroke-dashoffset: 35;}
+    30% {stroke-dashoffset: 35;}
+    60% {stroke-dashoffset: 0;}
+    100% {stroke-dashoffset: 0;}
+}
+
+@keyframes animRoz3 {
+    0% {stroke-dashoffset: 19;}
+    60% {stroke-dashoffset: 19;}
+    90% {stroke-dashoffset: 0;}
+    100% {stroke-dashoffset: 0;}
+}
+
+.page-home {
+    h1 {text-align: center; }
+    .home-list-blog {
+        padding: 100px 0;
+        .header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 60px;
+            @media(max-width: 767px) {
+                grid-template-columns: 1fr;
+            }
+            a { 
+                .ahref; 
+                padding: 20px 30px;
+                grid-row: 1/3;
+                grid-column: 2/3;
+                align-self: center;
+                justify-self: end;
+                @media(max-width: 767px) {
+                    grid-column: auto;
+                    grid-row: auto;
+                    justify-self: start;
+                }
+            }
+            .title  {
+                font-size: 36px;
+                font-weight: 700;
+                @media(max-width: 767px) {
+                    line-height: 1;
+                }
+            }
+        }
+        .items {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            @media(max-width: 767px) {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            .item {
+                width: 100%;
+                display: grid;
+                gap: 20px;
+                img{ 
+                    width: 100%; 
+                    height: 220px;
+                    object-fit: cover;
+                }
+                .timedate { font-size: 14px; }
+                .title { 
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 1;
+                    margin-top: -10px;
+                }
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: @colorpPrimary;
+                    transition: color .3s;
+                    &:hover {
+                        color: @colorpPrimaryOp5;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+// main: ../style.less
+footer {
+    .footer {
+        .wrapper {
+            padding: 40px 0 60px;
+            border-top: 1px solid @colorpPrimaryOp5;
+            display: grid;
+            gap: 30px;
+            grid-template-columns: auto 1fr 1fr auto;
+            @media(max-width: 767px){
+                grid-template-columns: 1fr;
+                justify-items: center;
+                gap: 60px;
+            }
+            .title {
+                font-size: 18px;
+                font-weight: 700;
+            }
+            a {
+                color: #fff;
+                transition: color .3s;
+                &:hover{
+                    color: @colorpPrimary;
+                }
+            }
+            .short-info {
+                margin: 0;
+            }
+            .block-menu {
+                display: grid;
+                align-content: start;
+                gap: 20px;
+                padding: 0 60px;
+                @media(max-width: 767px){
+                    padding: 0;
+                    width: 100%;
+                }
+                .items {
+                    display: grid;
+                    align-content: start;
+                    column-gap: 30px;
+                    row-gap: 10px;
+                    @media(max-width: 767px) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            }
+            .block-contact {
+                display: grid;
+                align-content: start;
+                gap: 20px;
+                @media(max-width: 767px){
+                    width: 100%;
+                }
+                .items {
+                    display: grid;
+                    gap: 10px;
+                    .social {
+                        padding-top: 15px;
+                        display: flex;
+                        gap: 20px;
+                    }
+                }
+            }
+
+        }
+    }
+    .copyright {
+        background-color: @colorpPrimary;
+        .wrapper {
+            padding: 20px 0;
+            color: #000;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            @media(max-width: 767px) {
+                display: grid;
+                justify-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+            a {
+                color: #000;
+                font-weight: 700;
+                transition: opacity .3s;
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}

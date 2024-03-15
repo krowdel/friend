@@ -1,0 +1,26 @@
+<?php 
+
+$menu=[
+    'main'=>[
+        'name'=>'subpages',
+        'href'=>'subpages',
+        'active'=>true
+    ],
+    'submenu'=>[
+        1=>[
+            'name'=>'subpage1',
+            'href'=>'subpages/subpage1',
+            'active'=>true
+        ],
+        2=>[
+            'name'=>'subpage2',
+            'href'=>'subpages/subpage2',
+            'active'=>true
+        ],
+        3=>[
+            'name'=>'subpage3',
+            'href'=>'subpages/subpage3',
+            'active'=>true
+        ],
+    ]
+];

@@ -1,0 +1,59 @@
+//main: ../style.less
+.page-article {
+    padding-top: 240px;
+    @media(max-width: 767px) {
+        padding-top: 180px;
+    }
+    .title-page {
+        margin: 0;
+    }
+    .block-header {
+        padding: 60px 0;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 60px;
+        @media(max-width: 767px) {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        img { width: 100%; }
+    }
+    p {
+        margin: 0;
+        padding-bottom: 20px;
+        line-height: 1.5;
+    }
+    a {
+        color: #5695cb;
+    }
+    .block-navigation {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 60px;
+        @media(max-width: 767px) {
+            display: grid;
+            gap: 50px;
+            justify-items: center;
+            justify-content: center;
+        }
+        
+        a {
+            color: #fff;
+            font-weight: 700;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            transition: color .3s;
+            svg {
+                transition: color .3s;
+                fill: #fff;
+            }
+            &:hover {
+                color: @colorpPrimary;
+                svg {
+                    fill: @colorpPrimary;
+                }
+            }
+        }
+    }
+}

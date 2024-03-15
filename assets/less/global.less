@@ -1,0 +1,110 @@
+//main: style.less
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
+@colorpPrimary: #FFB52B;
+@colorpSec: #2f3237;
+@colorpPrimaryOp5: #FFB52B66;
+
+html {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #2f3237;
+}
+body {
+    margin: 0;
+    background-image: url('../img/back_home_top2.webp');
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+.container  {
+    width: 1420px;
+    margin: auto;
+    @media(max-width: 1540px) {
+        width: 90%;
+    } 
+    @media(max-width: 1440px) {
+        width: 90%;
+    } 
+}
+.page {
+    padding: 160px 0 60px;
+    @media(max-width: 767px) {
+        padding: 140px 0 60px;
+    }
+    .title-page {
+        width: fit-content;
+        margin: auto;
+        font-size: 36px;
+        font-weight: 700;
+    }
+}
+a {
+    text-decoration: none;
+}
+.ahref {
+    color: #000;
+    padding: 15px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid @colorpPrimary;
+    background-color: @colorpPrimary;
+    text-transform: uppercase;
+    width: fit-content;
+    transition: color .3s, background .3s;
+    &:hover {
+        background-color: unset;
+        color: @colorpPrimary;
+    }
+}
+.pages404 {
+    .wrapper {
+        font-size: 36px;
+        width: fit-content;
+        margin: auto;
+        padding: 120px 0;
+    }
+}
+
+.tab-teams-style {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding-bottom: 45px;
+    @media(max-width: 767px) {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 30px;
+    }
+    img {
+        transition: opacity .3s;
+        opacity: .5;
+        cursor: pointer;
+        width: 100%;
+        object-fit: contain;
+    }
+    .tns-nav-active {
+        opacity: 1;
+    }
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    svg {
+        fill: #fff;
+        width: 25px;
+        transition: fill .3s;
+        &:hover{
+            fill: @colorpPrimary;
+        }
+    }
+}
